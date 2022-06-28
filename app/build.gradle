@@ -1,0 +1,85 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdk 31
+
+    compileOptions.incremental = false
+
+    defaultConfig {
+        applicationId 'com.example.z20220628_MarcoNeves_NYCSchools'
+        minSdk 23
+        targetSdk 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation "androidx.core:core-ktx:$core_ktx"
+    implementation "androidx.appcompat:appcompat:$appcompat"
+    implementation "com.google.android.material:material:$material"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout"
+    implementation "androidx.databinding:databinding-runtime:$databinding_runtime"
+    testImplementation "junit:junit:$junit"
+    androidTestImplementation "androidx.test.ext:junit:$ext_junit"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_core"
+
+    //ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$viewmodel_ktx"
+
+    //retrofit libraries
+    implementation "com.squareup.retrofit2:converter-gson:$converter_gson"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit"
+    implementation("com.squareup.okhttp3:logging-interceptor:$logging_interceptor")
+
+    // CardView
+    implementation("androidx.cardview:cardview:$cardview")
+
+    // Jackson Annotation
+    implementation("com.fasterxml.jackson.core:jackson-annotations:$jackson_annotations")
+
+    //Glide library
+    implementation "com.github.bumptech.glide:glide:$glide"
+    kapt "com.github.bumptech.glide:compiler:$glide_compiler"
+
+    // Kotlin
+    implementation("androidx.fragment:fragment-ktx:$fragment")
+    // Testing Fragments in Isolation
+    debugImplementation("androidx.fragment:fragment-testing:$fragment")
+
+    //Dagger
+    implementation "com.google.dagger:dagger:$dagger"
+    kapt "com.google.dagger:dagger-compiler:$dagger_compiler"
+    kapt "com.google.dagger:dagger-android-processor:$dagger_android_processor"
+
+    //Kodein dependency injection
+    implementation "org.kodein.di:kodein-di-generic-jvm:$kodein_di_generic_jvm"
+    implementation "org.kodein.di:kodein-di-framework-android-x:$kodein_di_framework_android_x"
+}

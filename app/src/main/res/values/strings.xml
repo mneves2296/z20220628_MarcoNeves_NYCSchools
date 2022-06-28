@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">20220628_MarcoNeves_NYCSchools</string>
+    <string name="school_name">School Name</string>
+    <string name="avg_math">Avg MATH:</string>
+    <string name="avg_writing">Avg WRI:</string>
+    <string name="avg_reading">Avg READ:</string>
+    <string name="default_value">\???</string>
+    <string name="error_title">Oops, an error occurred. Please try again!</string>
+    <string name="total_students">Total Students: %s</string>
+    <string name="school_image">School Image Logo</string>
+</resources>
